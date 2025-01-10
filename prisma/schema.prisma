@@ -32,6 +32,8 @@ model User {
   orders    Order[]
 }
 
+// order mai user ka relation dala hai to user mai order ka relation dalna hai bcz in 
+// prisma we have to define both side of relation
 model Order {
   id               String   @id @default(uuid())
   pricePaidInCents Int
