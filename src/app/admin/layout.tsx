@@ -15,7 +15,7 @@ const AdminLayout = ({
 				<NavLink href='/admin/users'>Users</NavLink>
 				<NavLink href='/admin/orders'>Orders</NavLink>
 			</Nav>
-			<div className='container my-6'>{children}</div>
+			<div className='container my-6 px-11'>{children}</div>
 		</>
 	);
 };
