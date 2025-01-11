@@ -14,7 +14,7 @@ export const Nav = ({children}:{children:ReactNode}) => {
 }
 
 export const NavLink = (props: Omit<ComponentProps<typeof Link>, "className">) => {
-    const pathname = usePathname
+    const pathname = usePathname();
     return (
 			<Link
 				{...props}

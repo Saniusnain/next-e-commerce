@@ -9,7 +9,7 @@ const AdminLayout = ({
 }>) => {
 	return (
 		<>
-			<Nav>
+			<Nav> 
 				<NavLink href='/admin'>Dasboard</NavLink>
 				<NavLink href='/admin/products'>Products</NavLink>
 				<NavLink href='/admin/users'>Users</NavLink>
