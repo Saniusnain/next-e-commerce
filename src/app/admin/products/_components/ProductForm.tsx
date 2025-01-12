@@ -9,8 +9,11 @@ import { useFormStatus } from 'react-dom';
 import { Product } from '@prisma/client';
 import Image from 'next/image';
 const ProductForm = ({ product }: { product?: Product | null }) => {
+	console.log('product is 000000000', product);
 	const [error, action] = useActionState(
-		product === null ? addProduct : updateProduct.bind(null, product.id),
+		product === null || product === undefined
+			? addProduct
+			: updateProduct.bind(null, product?.id as string),
 		{}
 	);
 	const [priceInCents, setPriceInCents] = React.useState<number | undefined>(
@@ -73,9 +76,9 @@ const ProductForm = ({ product }: { product?: Product | null }) => {
 			<div className='space-y-2'>
 				<Label htmlFor='image'>Image</Label>
 				<Input type='file' id='image' name='image' required={product == null} />
-				{product !== null && (
+				{product?.imagePath && (
 					<Image
-						src={product?.imagePath}
+						src={product && product?.imagePath}
 						height='200'
 						width='200'
 						alt='product image'
