@@ -85,7 +85,7 @@ const ProductsTable = async () => {
 							)}
 						</TableCell>
 						<TableCell>{product.name}</TableCell>
-						<TableCell>${product.priceInCents}</TableCell>
+						<TableCell>${product.priceInCents / 100}</TableCell>
 						<TableCell>{product._count.orders}</TableCell>
 						<TableCell>
 							<DropdownMenu>
@@ -94,12 +94,12 @@ const ProductsTable = async () => {
 								</DropdownMenuTrigger>
 								<DropdownMenuContent>
 									<DropdownMenuItem asChild>
-										<a download href={'/admin/products/${prodcut.id}/download'}>
+										<a download href={`/admin/products/${product.id}/download`}>
 											Download
 										</a>
 									</DropdownMenuItem>
 									<DropdownMenuItem asChild>
-										<Link href={'/admin/products/${product.id}/edit'}>
+										<Link href={`/admin/products/${product.id}/edit`}>
 											Edit
 										</Link>
 									</DropdownMenuItem>
